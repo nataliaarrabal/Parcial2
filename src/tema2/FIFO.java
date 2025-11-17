@@ -9,14 +9,18 @@ public class FIFO {
 	public FIFO(List<Integer>cola) {
 		this.cola=cola;
 	}
-	public void enqueue(List<Integer>cola,int x) {
+	public void enqueue(int x) {
 		cola.add(x);
 		
+	}
+	public void dequeue() {
+		cola.remove(0);
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FIFO cola=new FIFO();	
+		 List<Integer> lista = new ArrayList<>();
+		FIFO cola=new FIFO(lista);	
 	cola.enqueue(10);
 		
 
