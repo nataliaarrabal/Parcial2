@@ -29,6 +29,22 @@ public static int encontrarIndiceBinario(int[] arr, int target) {
 			return -1;
 }
 
+public static int encontrarPrimeraVocal(String texto) {
+    
+	if (texto==null||texto.length()==0){
+		return -1;}
+		
+	for (int i=0;i<texto.length();i++) {
+		char carAct=texto.charAt(i);
+		char min=Character.toLowerCase(carAct);
+		
+		if (min=='a'||min=='e'||min=='i'||min=='o'||min=='u') {
+			return i;
+		}
+	}return -1;
+	
+}
+
 	    public static void main(String[] args) {
 	        int[] datos = {5, 1, 9, 3, 7, 2};
 	        int buscar1 = 3;
@@ -43,6 +59,14 @@ public static int encontrarIndiceBinario(int[] arr, int target) {
 
 	        System.out.println("Índice de " + buscar1 + ": " + encontrarIndiceBinario(datosOrdenados, buscar3)); // 3
 	        System.out.println("Índice de " + buscar2 + ": " + encontrarIndiceBinario(datosOrdenados, buscar4)); // -1
+	        
+	        String texto1 = "rthmsql";
+	        String texto2 = "Algoritmos";
+	        String texto3 = "Snd";
+
+	        System.out.println("Primera vocal en '" + texto1 + "' está en: " + encontrarPrimeraVocal(texto1)); // -1
+	        System.out.println("Primera vocal en '" + texto2 + "' está en: " + encontrarPrimeraVocal(texto2)); // 0 ('A')
+	        System.out.println("Primera vocal en '" + texto3 + "' está en: " + encontrarPrimeraVocal(texto3)); // -1
 	    }
 	    
 	}
